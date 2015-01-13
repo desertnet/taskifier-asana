@@ -11,7 +11,7 @@ describe("AsanaTaskReceiver", function () {
   beforeEach(function () {
     asana = new AsanaMock()
     taskReceiver = new AsanaTaskReceiver()
-    taskReceiver._useAPIModule(asana)
+    taskReceiver._useAsanaAPIModule(asana)
   })
 
   describe("configure()", function () {

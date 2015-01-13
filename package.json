@@ -24,5 +24,8 @@
   "homepage": "https://github.com/desertnet/taskifier-asana",
   "devDependencies": {
     "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "asana": "^0.4.2"
   }
 }

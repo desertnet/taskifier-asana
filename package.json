@@ -1,0 +1,28 @@
+{
+  "name": "taskifier-asana",
+  "version": "0.0.1",
+  "description": "Plugin for taskifier that generates Asana tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/desertnet/taskifier-asana"
+  },
+  "keywords": [
+    "taskifier",
+    "asana",
+    "email",
+    "task"
+  ],
+  "author": "Eric McCarthy <eric@limulus.net> (http://www.limulus.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/desertnet/taskifier-asana/issues"
+  },
+  "homepage": "https://github.com/desertnet/taskifier-asana",
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  }
+}

@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/desertnet/taskifier-asana",
   "devDependencies": {
+    "bluebird": "^2.6.4",
     "mocha": "^2.1.0"
   },
   "dependencies": {

@@ -16,12 +16,12 @@ describe("AsanaTaskReceiver", function () {
   })
 
   describe("configure()", function () {
-    it("should call basicAuth with the given API key", function () {
+    it("should call useBasicAuth with the given API key", function () {
       taskReceiver.configure({
         "apiKey": "foobar"
       })
 
-      asana.assertBasicAuthCalledWith("foobar")
+      asana.assertUseBasicAuthCalledWith("foobar")
     })
   })
 

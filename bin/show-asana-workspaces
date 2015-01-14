@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+"use strict"
+
+var asana = require("asana")
+
+var apiKey = process.env["ASANA_API_KEY"] || process.argv[2]
+
+if (! apiKey) {
+  process.stderr.write("Usage: show-asana-workspaces <asana-api-key>\n\n")
+  process.exit(1)
+}
+
+var client = asana.Client.create()
+client.useBasicAuth(apiKey)
+client.workspaces.findAll()
+  .then(function (workspaces) {
+    process.stdout.write(JSON.stringify(workspaces, null, 2) + "\n\n")
+    process.exit(0)
+  })
+  .catch(function (err) {
+    process.stderr.write("Failed fetch of workspaces from Asana. Here's the error:\n\n")
+    process.stderr.write(JSON.stringify(err, null, 2) + "\n\n")
+    process.exit(1)
+  })

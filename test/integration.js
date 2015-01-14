@@ -8,13 +8,13 @@ var descOrSkip = config ? describe : describe.skip
 var AsanaTaskReceiver = require("../index.js")
 var TaskMock = require("./mock/TaskifierTaskMock.js")
 
-descOrSkip("Asana Integration", function () {
+descOrSkip("Asana Integration (See README.md to enable)", function () {
   var taskReceiver, task
 
   before(function () {
     task = new TaskMock({
       "name": "Mayday! Nothing works!",
-      "decription": "It's all broken! Everything! Holy smokes!"
+      "description": "It's all broken! Everything! Holy smokes!"
     })
 
     taskReceiver = new AsanaTaskReceiver()
@@ -23,8 +23,21 @@ descOrSkip("Asana Integration", function () {
 
   describe("new task creation", function () {
     it("should create a new task", function (done) {
-      taskReceiver.newTask(task, function (err, task) {
+      taskReceiver.newTask(task, function (err) {
         assert.ifError(err)
+        return done()
+      })
+    })
+  })
+
+  describe("error reporting", function () {
+    it("should report errors", function (done) {
+      var troublesomeTaskReceiver = new AsanaTaskReceiver()
+      var mangledConfig = Object.create(config)
+      mangledConfig.projectId = 999
+      troublesomeTaskReceiver.configure(mangledConfig)
+      troublesomeTaskReceiver.newTask(task, function (err, task) {
+        assert.ok(err)
         return done()
       })
     })

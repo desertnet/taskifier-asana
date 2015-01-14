@@ -17,6 +17,7 @@ AsanaMock.prototype.assertUseBasicAuthCalledWith = function (arg) {
 
 AsanaMock.prototype.assertTaskWasCreated = function (task) {
   assert.strictEqual(task.name(), this._tasksCreateCalledWithArg.name)
+  assert.strictEqual(task.description(), this._tasksCreateCalledWithArg.notes)
 }
 
 var Client = function (mock) {

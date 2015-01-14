@@ -7,3 +7,7 @@ var TaskifierTaskMock = module.exports = function (data) {
 TaskifierTaskMock.prototype.name = function () {
   return this._data.name
 }
+
+TaskifierTaskMock.prototype.description = function () {
+  return this._data.description
+}

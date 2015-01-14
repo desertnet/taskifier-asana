@@ -36,9 +36,8 @@ describe("AsanaTaskReceiver", function () {
     })
 
     it("should call client.tasks.create() with expected data", function (done) {
-      taskReceiver.newTask(task, function (err, returnedTask) {
+      taskReceiver.newTask(task, function (err) {
         assert.ifError(err)
-        assert.strictEqual(task, returnedTask)
         asana.assertTaskWasCreated(task)
         return done()
       })

@@ -36,7 +36,7 @@ descOrSkip("Asana Integration (See README.md to enable)", function () {
       var mangledConfig = Object.create(config)
       mangledConfig.projectId = 999
       troublesomeTaskReceiver.configure(mangledConfig)
-      troublesomeTaskReceiver.newTask(task, function (err, task) {
+      troublesomeTaskReceiver.newTask(task, function (err) {
         assert.ok(err)
         return done()
       })

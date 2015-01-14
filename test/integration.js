@@ -25,6 +25,7 @@ descOrSkip("Asana Integration", function () {
     it("should create a new task", function (done) {
       taskReceiver.newTask(task, function (err, task) {
         assert.ifError(err)
+        return done()
       })
     })
   })
@@ -35,6 +36,7 @@ function integrationConfig () {
 
   var envs = {
     "ASANA_API_KEY": "apiKey",
+    "ASANA_WORKSPACE_ID": "workspaceId",
     "ASANA_PROJECT_ID": "projectId"
   }
 

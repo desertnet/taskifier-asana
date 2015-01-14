@@ -44,7 +44,7 @@ function integrationConfig () {
 
   if (hasAllIntegrationEnvs) {
     Object.keys(envs).forEach(function (env) {
-      config[env] = envs[env]
+      config[envs[env]] = process.env[env]
     })
     return config
   }

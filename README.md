@@ -1,4 +1,4 @@
-# taskifier-asana
+# taskifier-asana [![Build Status](https://travis-ci.org/desertnet/taskifier-asana.svg?branch=master)](https://travis-ci.org/desertnet/taskifier-asana)
 
 Task receiver for [taskifier](https://github.com/desertnet/taskifier) that generates Asana tasks.
 

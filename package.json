@@ -4,7 +4,7 @@
   "description": "Plugin for taskifier that generates Asana tasks",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

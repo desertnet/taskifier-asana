@@ -27,6 +27,6 @@
     "mocha": "^2.1.0"
   },
   "dependencies": {
-    "asana": "^0.4.2"
+    "asana": "^0.7.9"
   }
 }
